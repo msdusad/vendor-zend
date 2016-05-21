@@ -1,0 +1,18 @@
+<?php
+ // module/Album/view/album/album/add.phtml:
+
+ $title = 'Add new Mahender';
+ $this->headTitle($title);
+ ?>
+ <a href="<?php echo $this->url('mahender'); ?>">ad</a>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <?php
+ $form->setAttribute('action', $this->url('mahender', array('action' => 'index')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo $this->formRow($form->get('inputname'));
+  echo $this->formRow($form->get('inputage'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();
